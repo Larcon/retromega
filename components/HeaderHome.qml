@@ -117,7 +117,20 @@ Rectangle {
         font.pixelSize: 18
         font.letterSpacing: -0.3
         font.bold: true     
-        visible: showStatusInfo         
+        visible: showStatusInfo    
+        
+        function set() {
+           header_time.text = Qt.formatTime(new Date(), "hh:mm") 
+        }
+        
+        Timer {
+            id: textTimer
+            interval: 60000 // Run the timer every minute
+            repeat: true
+            running: true
+            triggeredOnStart: true
+            onTriggered: header_time.set()
+        }
     }      
 
 }
