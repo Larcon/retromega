@@ -30,16 +30,13 @@ Item {
         height: 8
     }
     
-    function set() {
-        width: Math.max(percent * 17.6, 2)
-    }
-
-    Timer {
-        id: BatteryTimer
-        interval: 60000 // Run the timer every minute
-        repeat: true
-        running: true
-        triggeredOnStart: true
-        onTriggered: set()
+    Text {
+        id: percent_text
+        text: percent         
+        anchors.right:  parent.right
+        anchors.top: parent.top
+        anchors.topMargin: 16
+        anchors.rightMargin: 70
+        color: light ? "#60ffffff" : "#60000000"
     }
 }
