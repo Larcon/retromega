@@ -20,6 +20,7 @@ Item {
     }
     
     Rectangle {
+        id: battery_rectangle
         anchors.leftMargin: 2
         anchors.topMargin: 3
         anchors.top: parent.top
@@ -31,12 +32,26 @@ Item {
     }
     
     Text {
-        id: percent_text
+        id: battery_text
         text: percent         
         anchors.right:  parent.right
         anchors.top: parent.top
         anchors.topMargin: 16
         anchors.rightMargin: 70
         color: light ? "#60ffffff" : "#60000000"
+    }
+    
+    function set() {
+        battery_rectangle.width: Math.max(percent * 17.6, 2)
+        battery_text.text = percent
+    }
+
+    Timer {
+        id: battery_timer
+        interval: 60000 // Run the timer every minute
+        repeat: true
+        running: true
+        triggeredOnStart: true
+        onTriggered: set()
     }
 }
