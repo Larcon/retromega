@@ -31,7 +31,7 @@ Item {
     }
     
     function set() {
-           width: Math.max(percent * 17.6, 2)
+        width: Math.max(percent * 17.6, 2)
     }
 
     Timer {
