@@ -112,7 +112,7 @@ Rectangle {
         anchors.right:  parent.right
         anchors.top: parent.top
         anchors.topMargin: 16
-        anchors.rightMargin: showBattery ? 70 : 32
+        anchors.rightMargin: showBattery ? 130 : 32
         color: light ? "#60ffffff" : "#60000000"
         font.pixelSize: 18
         font.letterSpacing: -0.3
