@@ -29,4 +29,17 @@ Item {
         width: Math.max(percent * 17.6, 2)
         height: 8
     }
+    
+    function set() {
+           width: Math.max(percent * 17.6, 2)
+    }
+
+    Timer {
+        id: BatteryTimer
+        interval: 60000 // Run the timer every minute
+        repeat: true
+        running: true
+        triggeredOnStart: true
+        onTriggered: set()
+    }
 }
